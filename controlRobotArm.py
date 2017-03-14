@@ -1,14 +1,15 @@
-# change configuration for buttons
-# idea: R2 movebase ->
-#       L2 movebase <-
-#       right joystick topwards moveShoulder ^
-#       right joystick downwards moveShoulder v
-#       left joystick topwards moveElbow ^
-#       left joystick downwards moveElbow v
-#       arrow top moveWrist ^
-#       arrow down moveWrist v
-#       R1 moveGrip open
-#       L1 moveGrip close
+# Script containing logic on which buttons and controls trigger what OWI robotic arm motion.
+#
+# config: R2:                       moveBase ->
+#         L2:                       moveBase <-
+#         right joystick upwards:   moveShoulder ^
+#         right joystick downwards: moveShoulder v
+#         left joystick upwards:    moveElbow ^
+#         left joystick downwards:  moveElbow v
+#         arrow top:                moveWrist ^
+#         arrow down:               moveWrist v
+#         R1 moveGrip:              open
+#         L1 moveGrip:              close
 
 import RobotArm
 from evdev import InputDevice, categorize, ecodes, KeyEvent
