@@ -1,7 +1,7 @@
-OWO Robotic Arm controlled by a Logitech F310 Gamepad
+OWI Robotic Arm controlled by a Logitech F310 Gamepad
 _________________________________________________________________________________________________________________________________
 Used devices:
- - OWO Robotic Arm
+ - OWI Robotic Arm
  - USB control board (OWO toy robot arm accessory)
  - Logitech F310 Gamepad
  - Linux machine (laptop, raspberry pi, ...)
