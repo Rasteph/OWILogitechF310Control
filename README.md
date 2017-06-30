@@ -1,10 +1,10 @@
 OWO Robotic Arm controlled by a Logitech F310 Gamepad
 
 Used devices:
-  OWO Robotic Arm
-  USB control board (OWO toy robot arm accessory)
-  Logitech F310 Gamepad
-  Linux machine (laptop, raspberry pi, ...)
+ - OWO Robotic Arm
+ - USB control board (OWO toy robot arm accessory)
+ - Logitech F310 Gamepad
+ - Linux machine (laptop, raspberry pi, ...)
 
 The Logitech F310 gamepad as well as the OWO Robotic Arm USB control board are connected to a linux machine which handles the communication between both devices.
 
@@ -13,8 +13,8 @@ Matt Dysons approach uses the lego-pi library (https://github.com/zephod/lego-pi
 The lego-pi library does not work with the Logitech F310 Gamepad (as far as i know, without sophisticated adjustments to the library).
 
 To read and interpret the events (e.g. Button X pushed) of the Logitech F310 Gamepad, the OWOLogitechF310Control uses these additional libraries:
-[-] evdev - A generic Linux input driver https://linux.die.net/man/4/evdev
-[-] pyusb - USB devices communication in Python https://pypi.python.org/pypi/pyusb/1.0.0
+- evdev - A generic Linux input driver https://linux.die.net/man/4/evdev
+- pyusb - USB devices communication in Python https://pypi.python.org/pypi/pyusb/1.0.0
 
 This repository includes the needed python scripts to control the popular OWO toy robot arm with a Logitech F310 gamepad.
 The scripts provided by Matt Dyson:
@@ -30,9 +30,9 @@ Scripts provided by me:
   - joyInfo.py
   
  What needs to be started to use the Logitech F310 Gampepad as controller:
-  - 1. start RobotArm.py
-  - 2. start controlRobotArm.py
-  - 3. push desired button ;)
+  1. run RobotArm.py
+  2. run controlRobotArm.py
+  3. push desired button ;)
   
   
   
