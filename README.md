@@ -1,1 +1,2 @@
-driver to move OWO toy robotic arm with a Logitech F310 gamepad
+OWO toy robot arm controlled by a Logitech F310 gamepad
+based on http://mattdyson.org/projects/robotarm/
