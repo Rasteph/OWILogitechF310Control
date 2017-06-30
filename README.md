@@ -36,7 +36,5 @@ Scripts provided by me:
  What needs to be started to use the Logitech F310 Gampepad as controller:
   1. run RobotArm.py
   2. run controlRobotArm.py
-  3. push desired button ;)
-  
-  
-  
+  3. push desired button to move the robotic arm (button configuration listed in controlRobotArm.py)
+
