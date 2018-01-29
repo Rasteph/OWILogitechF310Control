@@ -19,6 +19,10 @@ arm = RobotArm.RobotArm()
 # input event depends on the device in use
 # check with $ ls /dev/input/
 game_pad = InputDevice("/dev/input/event16")
+print(game_pad)
+game_pad.capabilities()
+game_pad.capabilities(verbose=False)
+
 
 for event in game_pad.read_loop():
     key_event = categorize(event)
