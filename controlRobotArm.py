@@ -13,13 +13,19 @@
 #         L1 moveGrip:              close
 
 import RobotArm
+import inputCheck
 from evdev import InputDevice, categorize, ecodes, KeyEvent
 
 arm = RobotArm.RobotArm()
 # input event depends on the device in use
 # check with $ ls /dev/input/
-game_pad = InputDevice("/dev/input/event16")
-print(game_pad)
+
+iCheck = inputCheck.inputCheck()
+gamepadEvent = iCheck.printFnumber("Logitech Gamepad F310")
+game_pad = InputDevice(str(gamepadEvent))
+print "Input device Logitech Gamepad F310 ready to use."
+#game_pad = InputDevice("/dev/input/event16")
+
 game_pad.capabilities()
 game_pad.capabilities(verbose=False)
 

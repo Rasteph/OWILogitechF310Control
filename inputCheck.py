@@ -1,19 +1,20 @@
 import evdev
-devices = [evdev.InputDevice(fn) for fn in evdev.list_devices()]
 found = False
+devices = [evdev.InputDevice(fn) for fn in evdev.list_devices()] 
 
-class inputCheck:
+class inputCheck:    
+    def __init__(self):
+        self.devices = devices
 
-    #def __init__(self):
-    
     def printInputDevices(self):
         print evdev.list_devices() 
-        for device in devices:
+        for device in self.devices:
             print (device.fn, device.name, device.phys)
+            return device.name
 
     def printFnumber(self, device_name):
-        for device in devices:
+        for device in self.devices:
             if device.name == device_name:
-                print device.fn
+                return device.fn
             else:
                 print 'Device not found.'
