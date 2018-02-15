@@ -1,9 +1,14 @@
 # Script to test the bindings of the Logitech Gamepad 310 buttons
 # Prints the name of the pushed button/joystick/..
 
+import inputCheck
 from evdev import InputDevice, categorize, ecodes, KeyEvent, InputEvent
 
-game_pad = InputDevice("/dev/input/event16")
+
+iCheck = inputCheck.inputCheck()
+gamepadEvent = iCheck.printFnumber("Logitech Gamepad F310")
+game_pad = InputDevice(str(gamepadEvent))
+#game_pad = InputDevice("/dev/input/event16")
 
 for event in game_pad.read_loop():
     key_event = categorize(event)
@@ -11,7 +16,6 @@ for event in game_pad.read_loop():
         #print key_event
         if key_event.keystate == KeyEvent.key_down:
             scan_code = key_event.scancode
-            print "hi"
             if scan_code == 304:  # A
                 print "Back"
             elif scan_code == 308:  # Y
