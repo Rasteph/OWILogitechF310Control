@@ -14,7 +14,7 @@
 
 import RobotArm
 import inputCheck
-from evdev import InputDevice, categorize, ecodes, KeyEvent
+from evdev import InputDevice, categorize, ecodes, KeyEvent, InputEvent
 
 arm = RobotArm.RobotArm()
 # input event depends on the device in use
@@ -28,34 +28,38 @@ print "Input device Logitech Gamepad F310 ready to use."
 
 game_pad.capabilities()
 game_pad.capabilities(verbose=False)
-
+lastKey = 0 # 1 == L1 or R1, 0 == other keys 
 
 for event in game_pad.read_loop():
     key_event = categorize(event)
-    if event.type == ecodes.EV_KEY and key_event.keystate == KeyEvent.key_down:
+    print game_pad.active_keys(True)
+    if len(game_pad.active_keys()) < 1 and lastKey == 1: # only move gripper if L1/R1 pushed
+        arm.reset()
+    elif event.type == ecodes.EV_KEY and key_event.keystate == KeyEvent.key_down:
         scan_code = key_event.scancode
-        if scan_code == 304:  # A
-            print "Back"
-        elif scan_code == 308:  # Y
-            print "Forward"
-        elif scan_code == 305:  # B
-            print "Right"
-        elif scan_code == 307:  # X
-            print "Left"
-        elif scan_code == 311:  # R1
+        if scan_code == 311:  # R1
             print "R1"
             arm.moveGrip(1)
+            lastKey = 1
         elif scan_code == 310:  # L1
             print "L1"
             arm.moveGrip(2)
-        elif scan_code == 314:  # Back
-            print "Back"
-        elif scan_code == 315:  # Start
-            print "Start"
-        else:
-            arm.moveGrip(0) # prevent infinite close or open motion for gripper
+            lastKey = 1
+        # elif scan_code == 314:  # Back
+        #     print "Back"
+        # elif scan_code == 315:  # Start
+        #     print "Start"
+        # elif scan_code == 308:  # Y
+        #     print "Forward"
+        # elif scan_code == 305:  # B
+        #     print "Right"
+        # elif scan_code == 307:  # X
+        #     print "Left"
+        # elif scan_code == 304:  # A
+        #     print "Back"
 
     if event.type == ecodes.EV_ABS:
+        lastKey = 0
         event_code = key_event.event.code
         # moveBase
         if event_code == 2:
@@ -100,3 +104,4 @@ for event in game_pad.read_loop():
                 arm.moveGrip(1)
             elif event.value < -1000:
                 arm.moveGrip(2)
+
