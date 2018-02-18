@@ -13,7 +13,7 @@ class OWIRoboticArm:
         self.OWIArmUsbDevice = usbdev.find(idVendor=vendor, idProduct=product)
         self.OWIArmUsbDevice.set_configuration()
         if not self.OWIArmUsbDevice:
-            print "Could not connect to OWI Robotic Arm."
+            raise ValueError("Could not connect to OWI Robotic Arm.")
         #self.stopMotion()
 
     def __del__(self):
@@ -28,6 +28,15 @@ class OWIRoboticArm:
         bytes[0] = (self.shoulder << 6) + (self.elbow << 4) + (self.wrist << 2) + self.grip
         bytes[1] = self.base
         bytes[2] = self.lightSwitch
+
+    def stopMotion(self):
+        self.base = 0
+        self.elbow = 0
+        self.grip = 0
+        self.lightSwitch = 0
+        self.shoulder = 0
+        self.wrist = 0
+        self.sendCommand()
 
     def baseMotion(self, motionDirection):
         self.base = motionDirection
