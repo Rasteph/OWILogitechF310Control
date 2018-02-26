@@ -1,6 +1,6 @@
 ## OWI Robotic Arm controlled by the Logitech F310 Gamepad
 
-[Click to watch youtube video. <img src="https://github.com/pastelhh/OWILogitechF310Control/blob/master/img/OWILogitechGamepadF310.jpg?raw=true" width="480">](https://www.youtube.com/watch?v=YJlikTFGr-c&feature=youtu.be "OWI Robotic arm controlled by Logitech Gamepad F310 - Click to Watch!")
+[OWI Robotic Arm controlled by the Logitech F310 Gamepad - Click to watch youtube video. <img src="https://github.com/pastelhh/OWILogitechF310Control/blob/master/img/OWILogitechGamepadF310.jpg?raw=true" width="480">](https://www.youtube.com/watch?v=YJlikTFGr-c&feature=youtu.be "OWI Robotic arm controlled by Logitech Gamepad F310 - Click to Watch!")
 
 Used devices:
  - OWI Robotic Arm
