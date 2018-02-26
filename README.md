@@ -1,6 +1,6 @@
 ## OWI Robotic Arm controlled by the Logitech F310 Gamepad
 
-<img src="https://github.com/pastelhh/OWILogitechF310Control/blob/master/img/OWILogitechGamepadF310.jpg?raw=true" width="480">
+[OWI Robotic arm controlled by Logitech Gamepad F310 - Click to watch youtube video. <img src="https://github.com/pastelhh/OWILogitechF310Control/blob/master/img/OWILogitechGamepadF310.jpg?raw=true" width="480">](https://www.youtube.com/watch?v=YJlikTFGr-c&feature=youtu.be "OWI Robotic arm controlled by Logitech Gamepad F310 - Click to Watch!")
 
 Used devices:
  - OWI Robotic Arm
@@ -26,7 +26,10 @@ Python package:
 - **inputCheck.py**              : Helper class providing information on connected input devices on the linux machine
 - **test.py**                    : Names the input event number of a wanted input device and other connected devices
 
- ### What needs to be started to use the Logitech F310 Gampepad as controller:
-  1. Connect Logitech Gamepad F310 and OWI Robotic Arm to the Linux machine
-  2. run `sudo python contrlOWIRoboticArm.py`
+ ### What needs to be started to use the Logitech F310 Gampepad as controller for the OWI Robotic Arm:
+  1. Clone GitHub project
+  2. Make `controlOWIRoboticArm.py` executable 
+  3. Connect Logitech Gamepad F310 and OWI Robotic Arm to the Linux machine
+  4. run `sudo python contrlOWIRoboticArm.py`
+  5. push buttons on the gamepad ;)
 
